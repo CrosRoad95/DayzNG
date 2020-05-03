@@ -18,5 +18,6 @@ pl["Account doesn't exists."] = "Konto nie istnieje."
 pl["Wrong password."] = "Błędne hasło."
 pl["Account with this login already exists."] = "Login zajęty."
 pl["You're already logged in."] = "Jesteś już zalogowany."
+pl["Account created."] = "Konto zostało utworzone."
 
 locale["pl"] = pl;

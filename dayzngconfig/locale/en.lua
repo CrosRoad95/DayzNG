@@ -18,5 +18,6 @@ en["Account doesn't exists."] = "Account doesn't exists."
 en["Wrong password."] = "Wrong password."
 en["Account with this login already exists."] = "Account with this login already exists."
 en["You're already logged in."] = "You're already logged in."
+en["Account created."] = "Account created."
 
 locale["en"] = en;

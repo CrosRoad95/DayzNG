@@ -113,9 +113,7 @@ addEventHandler("requestRegister", resourceRoot, function(login, password, repea
     showPlayerPopup(client, "error", config:getText(client, "Account with this login already exists."))
     return;
   end
-  if(not verifyAccountPassword(uid, password))then
-    showPlayerPopup(client, "error", config:getText(client, "Wrong password."))
-    return;
-  end
-  iprint("ok")
+  
+  registerAccount(login, password)
+  showPlayerPopup(client, "info", config:getText(client, "Account created."))
 end)
