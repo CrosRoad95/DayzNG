@@ -22,6 +22,14 @@ function getAccountByLogin(login, caseSensitive)
   return false
 end
 
+function verifyAccountPassword(uid, password)
+  local result = exports.dayzngdb:dbGet("players", "select password from %s where id = ? limit 1", uid)
+  if(result and #result == 1)then
+    return passwordVerify(password, result[1].password);
+  end
+  return false
+end
+
 function getLastAccountId()
   local q = exports.dayzngdb:dbGet("players", "select max(id) as id from %s")
   if(q and #q > 0)then
@@ -45,14 +53,10 @@ function isPlayerLoggedIn(player)
   return getElementData(player, "uid") and true or false
 end
 
-function login(player, login, password)
+function loginPlayer(player, uid)
   if(isPlayerLoggedIn(player))then
     return false
   end
-  local accountId = getAccountByLogin(login)
-
+  setElementData(player, "uid", uid)
+  spawnPlayer(player)
 end
-
-setTimer(function()
-  iprint("register",registerAccount("test", "asdasd"))
-end,200, 1)

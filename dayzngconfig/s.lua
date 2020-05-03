@@ -37,7 +37,6 @@ function insertDefaultLootTable()
   end
 end
 
-
 addEventHandler("onDayzDatabaseConnected", root, function()
   local q = exports.dayzngdb:dbGet("loots", "select count(*) as count from %s")
   if(q[1].count == 0)then
@@ -45,4 +44,4 @@ addEventHandler("onDayzDatabaseConnected", root, function()
     outputDebugString("Default loot table has been added inserted.")
   end
 end)
--- lootLocations = {
+

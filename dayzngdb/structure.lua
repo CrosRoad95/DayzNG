@@ -24,6 +24,16 @@ tables["loots"] = [[
   ) ENGINE=InnoDB DEFAULT CHARSET=utf8
 ]]
 
+tables["playerdata"] = [[
+  CREATE TABLE IF NOT EXISTS `%s` (
+    `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+    `pid` int(10) unsigned NOT NULL,
+    `valuekey` varchar(40) NOT NULL,
+    `data` text NOT NULL,
+    PRIMARY KEY (`id`)
+  ) ENGINE=InnoDB DEFAULT CHARSET=utf8
+]]
+
 addEventHandler("onDayzDatabaseConnected", root, function()
   for tableName,sql in pairs(tables)do
     queryFree(string.format(sql, getDatabasePrefix()..tableName))

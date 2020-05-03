@@ -19,23 +19,35 @@ function getLocalization(player)
 end
 
 if(localPlayer)then
-  function getText(textId)
+  function getText(textId, ...)
     local localization = getLocalization();
     local l = locale[localization]
     if(not l)then
       localization = getDefaultLanguage()
       l = locale[localization]
     end
-    return l[textId] or "NOT FOUND client Lng: "..tostring(localization).." id: "..tostring(textId)
+    local args = {...}
+    if(#args > 0)then
+      local text = l[textId] or "NOT FOUND client Lng: "..tostring(localization).." id: "..tostring(textId);
+      return string.format(text, ...)
+    else
+      return l[textId] or "NOT FOUND client Lng: "..tostring(localization).." id: "..tostring(textId)
+    end
   end
 else
-  function getText(player, textId)
+  function getText(player, textId, ...)
     local localization = getLocalization(player);
     local l = locale[localization]
     if(not l)then
       localization = getDefaultLanguage()
       l = locale[localization]
     end
-    return l[textId] or "NOT FOUND server Lng: "..tostring(localization).." id: "..tostring(textId)
+    local args = {...}
+    if(#args > 0)then
+      local text = l[textId] or "NOT FOUND server Lng: "..tostring(localization).." id: "..tostring(textId);
+      return string.format(text, ...)
+    else
+      return l[textId] or "NOT FOUND server Lng: "..tostring(localization).." id: "..tostring(textId)
+    end
   end
 end
