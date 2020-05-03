@@ -1,0 +1,21 @@
+<meta>
+  <info author="CrosRoad95" version="1.0" name="" type="script"></info>
+
+  <script src="structure.lua" type="server"/>
+  <script src="database.lua" type="server"/>
+
+  <export function="query" type="server" />
+  <export function="queryFree" type="server" />
+  <export function="queryAsync" type="server" />
+  <export function="getDatabasePrefix" type="server" />
+  <export function="dbGet" type="server" />
+  <export function="dbSet" type="server" />
+  
+  <settings>
+    <setting name="login" value="root" />
+    <setting name="database" value="dayz" />
+    <setting name="host" value="127.0.0.1" />
+    <setting name="password" value="" />
+    <setting name="tablePrefix" value="dayz_" />
+  </settings>
+</meta>

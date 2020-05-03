@@ -1,0 +1,32 @@
+<meta>
+	<info author="CrosRoad95" version="0.0.0" name="" type="script"></info>
+	<script src="c.lua" type="client"></script>
+	<script src="s.lua" type="server"></script>
+
+	<script src="locale.lua" type="shared"></script>
+	<script src="config/spawns.lua" type="server"></script>
+	<script src="items.lua" type="server"></script>
+	<script src="config/itemsDefinition.lua" type="server"></script>
+	<script src="config/difficultyConfig.lua" type="server"></script>
+	<script src="config/defaultPlayerConfig.lua" type="server"></script>
+	<script src="config/generalConfig.lua" type="server"></script>
+	<script src="config/lootConfig.lua" type="server"></script>
+	<script src="locale/en.lua" type="shared"></script>
+	<script src="locale/pl.lua" type="shared"></script>
+
+  <settings>
+    <setting name="difficulty" value="easy" desc="easy, medium, hard, impossible" />
+    <setting name="defaultLanguage" value="en" />
+    <setting name="inventoryType" value="[1]" desc="1 = classic, 2 = grid" />
+  </settings>
+
+  <export function="getText" type="shared"/>
+  <export function="getDifficulty" type="shared"/>
+
+  <export function="getConfig" type="server"/>
+  <export function="getGeneralConfig" type="server"/>
+  <export function="createItem" type="server"/>
+  <export function="getSpawn" type="server"/>
+  
+	<min_mta_version server="1.5.7" client="1.5.7" />
+</meta>
