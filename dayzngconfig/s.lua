@@ -1,5 +1,5 @@
 ﻿function getInventoryType()
-  return get("inventoryType")
+  return 1--get("inventoryType")
 end
 
 function getDifficulty()
@@ -28,3 +28,21 @@ end
 function getGeneralConfig(key)
   return generalConfig[key]
 end
+
+function insertDefaultLootTable()
+  for category, loots in pairs(lootsLocations)do
+    for i,loot in ipairs(loots)do
+      exports.dayzngdb:dbSet("loots", "insert into %s (location, category)values(?,?)", category,table.concat(loot,","))
+    end
+  end
+end
+
+
+addEventHandler("onDayzDatabaseConnected", root, function()
+  local q = exports.dayzngdb:dbGet("loots", "select count(*) as count from %s")
+  if(q[1].count == 0)then
+    insertDefaultLootTable();
+    outputDebugString("Default loot table has been added inserted.")
+  end
+end)
+-- lootLocations = {

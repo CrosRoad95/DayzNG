@@ -1,8 +1,4 @@
-function getDatabasePrefix()
-  return get("tablePrefix")
-end
-
-tables = {}
+local tables = {}
 
 tables["players"] = [[
   CREATE TABLE IF NOT EXISTS `%s` (
@@ -19,8 +15,17 @@ tables["players"] = [[
    ) ENGINE=InnoDB DEFAULT CHARSET=utf8
 ]]
 
+tables["loots"] = [[
+  CREATE TABLE IF NOT EXISTS `%s` (
+    `id` int(11) NOT NULL AUTO_INCREMENT,
+    `location` varchar(40) NOT NULL COMMENT 'x,y,z,interior,dimension - gp 5',
+    `category` varchar(30) NOT NULL,
+    PRIMARY KEY (`id`)
+  ) ENGINE=InnoDB DEFAULT CHARSET=utf8
+]]
+
 addEventHandler("onDayzDatabaseConnected", root, function()
   for tableName,sql in pairs(tables)do
     queryFree(string.format(sql, getDatabasePrefix()..tableName))
   end
-end)
+end, true, "high")

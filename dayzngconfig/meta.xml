@@ -11,13 +11,14 @@
 	<script src="config/defaultPlayerConfig.lua" type="server"></script>
 	<script src="config/generalConfig.lua" type="server"></script>
 	<script src="config/lootConfig.lua" type="server"></script>
+	<script src="config/lootsLocations.lua" type="server"></script>
 	<script src="locale/en.lua" type="shared"></script>
 	<script src="locale/pl.lua" type="shared"></script>
 
   <settings>
     <setting name="difficulty" value="easy" desc="easy, medium, hard, impossible" />
     <setting name="defaultLanguage" value="en" />
-    <setting name="inventoryType" value="[1]" desc="1 = classic, 2 = grid" />
+    <!--<setting name="inventoryType" value="[1]" desc="1 = classic, 2 = grid" />-->
   </settings>
 
   <export function="getText" type="shared"/>

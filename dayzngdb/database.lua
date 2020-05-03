@@ -1,5 +1,9 @@
 ﻿local mysqlHandler = nil
-addEvent("onDayzDatabaseConnected")
+
+function getDatabasePrefix()
+  return get("tablePrefix")
+end
+
 local function mysql_connect( )
   local mysqlData = {
     login = get("login"),

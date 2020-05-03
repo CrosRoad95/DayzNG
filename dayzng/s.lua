@@ -1,1 +1,1 @@
-﻿
+﻿addEvent("onDayzDatabaseConnected", true)
