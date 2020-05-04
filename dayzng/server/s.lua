@@ -1,9 +1,11 @@
 ﻿local config;
 addEventHandler("onResourceStart", resourceRoot, function()
   config = exports.dayzngconfig
+  triggerEvent("onDayzStarted", root)
 end)
 
 addEvent("onDayzDatabaseConnected", true)
+addEvent("onDayzStarted", true)
 
 playerByUID = {}
 UIDByPlayer = {}

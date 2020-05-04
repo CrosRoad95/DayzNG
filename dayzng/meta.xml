@@ -1,12 +1,15 @@
 <meta>
 	<info author="CrosRoad95" version="0.0.0" name="" type="gamemode"></info>
+
 	<script src="client/c.lua" type="client"></script>
+	<script src="client/inventory_c.lua" type="client"></script>
+
 	<script src="server/s.lua" type="server"></script>
 	<script src="server/inventory_s.lua" type="server"></script>
-	<script src="client/inventory_c.lua" type="client"></script>
 	<script src="server/saveLoad.lua" type="server"></script>
 	<script src="server/login.lua" type="server"></script>
 	<script src="server/player.lua" type="server"></script>
+	<script src="server/items.lua" type="server"></script>
 
 	<script src="guis/login.lua" type="client"></script>
 
@@ -21,6 +24,11 @@
   <export function="registerAccount" type="shared"></export>
   <export function="isPlayerLoggedIn" type="shared"></export>
   <export function="loginPlayer" type="shared"></export>
+
+  <export function="createItem" type="server"></export>
+  <export function="getItemByID" type="server"></export>
+  <export function="getItemsFromResource" type="server"></export>
+  <export function="getItemsFromCategory" type="server"></export>
   
   <include resource="dayzngconfig" />
   <include resource="dayzngdb" />

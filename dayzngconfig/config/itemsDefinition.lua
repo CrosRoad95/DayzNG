@@ -1,8 +1,40 @@
+addEventHandler("onDayzStarted", root, function()
+local dayzNg = exports.dayzNG
 
-createItem(1, {
-  ["category"] = {"Medical", "Medical"}, -- loot category, inventory category
-  ["name"] = "Bandage",
-  ["space"] = {1, {1,1}}, -- 1 slot in classic inventory, 1x1 in grid inventory
-  ["stackable"] = 4,
+dayzNg:createItem(1,
+{
+  ["name"] = {
+    ["en"] = "Bandage",
+    ["pl"] = "Bandaż",
+  },
+  ["category"] = { 
+    "Medical",
+    {"Medical items", "General"},
+  },
+  ["space"] = {
+    1,
+    {1,1}
+  },
+  ["stackable"] = 1,
   ["rarity"] = 4,
 })
+
+dayzNg:createItem(2,
+{
+  ["name"] = {
+    ["en"] = "Painkiller",
+    ["pl"] = "Lek przeciwbólowy",
+  },
+  ["category"] = { 
+    "Medical",
+    {"Medical items", "General"},
+  },
+  ["space"] = {
+    1,
+    {1,1}
+  },
+  ["stackable"] = 1,
+  ["rarity"] = 4,
+})
+
+end, false, "high")
