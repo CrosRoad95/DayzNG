@@ -24,7 +24,9 @@
   
   <include resource="dayzngconfig" />
   <include resource="dayzngdb" />
-  <include resource="dayzngfreecam" />
   <include resource="dayzngadmin" />
   <include resource="dgs" />
+  <include resource="freecam" />
+  <include resource="bone_attach" />
+  <include resource="slothbot" />
 </meta>
