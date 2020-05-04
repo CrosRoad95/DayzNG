@@ -6,8 +6,11 @@ Right now it is only foundations, feel free to send a pull request.
 Required dependencies:
 
 DGS https://wiki.multitheftauto.com/wiki/Resource:Dgs
+
 slothbot https://community.multitheftauto.com/index.php?p=resources&s=details&id=672
+
 bone_attach https://community.multitheftauto.com/index.php?p=resources&s=details&id=2540
+
 freecam https://community.multitheftauto.com/index.php?p=resources&s=details&id=3670
 
 # Startup:
