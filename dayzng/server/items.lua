@@ -42,6 +42,7 @@ local function onResourceStop()
   while(itemsByResource[source])do
     removeItem(itemsByResource[source][1])
   end
+  removeEventHandler("onResourceStop", source, onResourceStop)
 end
 
 function createItem(itemId, params)
@@ -99,4 +100,13 @@ end
 
 function getAllItemsCategories()
   return itemsCategory;
+end
+
+function isValidItemCategory(category)
+  for i=1,#itemsCategory do
+    if(itemsCategory[i] == category)then
+      return true
+    end
+  end
+  return false
 end

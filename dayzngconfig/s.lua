@@ -45,3 +45,14 @@ addEventHandler("onDayzDatabaseConnected", root, function()
   end
 end)
 
+function createDefaultLoots()
+  for category, positions in pairs(lootsLocations)do
+    for i,position in ipairs(positions)do
+      exports.dayzng:createLoot(category, unpack(position))
+    end
+  end
+end
+
+addEventHandler("onDayzStarted", root, function()
+  createDefaultLoots()
+end)

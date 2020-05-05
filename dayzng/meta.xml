@@ -10,6 +10,7 @@
 	<script src="server/login.lua" type="server"></script>
 	<script src="server/player.lua" type="server"></script>
 	<script src="server/items.lua" type="server"></script>
+	<script src="server/loots.lua" type="server"></script>
 
 	<script src="guis/login.lua" type="client"></script>
 
@@ -30,6 +31,11 @@
   <export function="getItemsFromResource" type="server"></export>
   <export function="getItemsFromCategory" type="server"></export>
   <export function="getAllItemsCategories" type="server"></export>
+  <export function="isValidItemCategory" type="server"></export>
+
+  <export function="createLoot" type="server"></export>
+  <export function="regenerateLoot" type="server"></export>
+  <export function="getLootCategory" type="server"></export>
   
   <include resource="dayzngconfig" />
   <include resource="dayzngdb" />
