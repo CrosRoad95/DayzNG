@@ -1,6 +1,7 @@
 local items = {}
 local itemsByCategory = {}
 local itemsByResource = {}
+local itemsCategory = {}
 
 function removeItem(itemId)
   if(not items[itemId])then
@@ -17,6 +18,12 @@ function removeItem(itemId)
   end
   if(#itemsByCategory[categoryName] == 0)then
     itemsByCategory[categoryName] = nil
+    for i,v in ipairs(itemsCategory)do
+      if(v == categoryName)then
+        table.remove(itemsCategory, i)
+        break;
+      end
+    end
   end
 
   for i,v in ipairs(itemsByResource[sourceResourceRoot])do
@@ -69,6 +76,7 @@ function createItem(itemId, params)
   local categoryName = params["category"][1]
   if(not itemsByCategory[categoryName])then
     itemsByCategory[categoryName] = {}
+    itemsCategory[#itemsCategory + 1] = categoryName
   end
   table.insert(itemsByCategory[categoryName], itemId);
   table.insert(itemsByResource[sourceResourceRoot], itemId)
@@ -87,4 +95,8 @@ end
 
 function getItemsFromCategory(category)
   return itemsByCategory[category] or {}
+end
+
+function getAllItemsCategories()
+  return itemsCategory;
 end
