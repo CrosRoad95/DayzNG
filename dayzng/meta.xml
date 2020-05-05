@@ -29,6 +29,7 @@
   <export function="getItemByID" type="server"></export>
   <export function="getItemsFromResource" type="server"></export>
   <export function="getItemsFromCategory" type="server"></export>
+  <export function="getAllItemsCategories" type="server"></export>
   
   <include resource="dayzngconfig" />
   <include resource="dayzngdb" />
