@@ -1,17 +1,7 @@
 locale = {}
 
-if(localPlayer)then
-  function getDefaultLanguage()
-    return getElementData(root,"defaultLanguage")
-  end
-else
-  function getDefaultLanguage()
-    return get("defaultLanguage")
-  end
-end
-
-if(not localPlayer)then
-  setElementData(root, "defaultLanguage", getDefaultLanguage())
+function getDefaultLanguage()
+  return getGeneralConfig("defaultLanguage")
 end
 
 function getLocalization(player)
@@ -50,4 +40,11 @@ else
       return l[textId] or "NOT FOUND server Lng: "..tostring(localization).." id: "..tostring(textId)
     end
   end
+end
+
+function setTranslation(language, orignal, translation)
+  if(not locale[language])then
+    locale[language] = {}
+  end
+  locale[language][orignal] = translation
 end

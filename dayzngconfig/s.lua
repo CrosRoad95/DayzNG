@@ -2,8 +2,8 @@
   return 1--get("inventoryType")
 end
 
-function getDifficulty()
-  return get("difficulty")
+function getServerDifficulty()
+  return generalConfig["difficulty"]
 end
 
 function getSpawn(player, spawnId)
@@ -18,10 +18,14 @@ function getSpawn(player, spawnId)
   end
 end
 
-function getConfig(key)
+function getConfig(key, difficulty)
   if(difficultyConfig[key])then
-    local difficulty = getDifficulty();
-    return difficultyConfig[key][difficulty];
+    if(difficulty)then
+      return difficultyConfig[key][difficulty];
+    else
+      local difficulty = getDefaultLanguage();
+      return difficultyConfig[key][difficulty];
+    end
   end
 end
 
@@ -55,4 +59,7 @@ end
 
 addEventHandler("onDayzStarted", root, function()
   createDefaultLoots()
+  for i,v in ipairs(synchronizedConfigs)do
+    setElementData(root, "general_config_"..v, getGeneralConfig(v))
+  end
 end)
