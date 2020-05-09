@@ -3,6 +3,7 @@ local en = {}
 -- gui
 en["player"] = "player"
 en["inventory"] = "inventory"
+en["Inventory"] = "Inventory"
 en["Login panel"] = "Login panel"
 en["Login"] = "Login"
 en["Register"] = "Register"

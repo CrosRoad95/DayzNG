@@ -1,5 +1,4 @@
 function createLoginGui()
-  local sx,sy = guiGetScreenSize()
   local loginWindow = DGS:dgsCreateWindow ( sx/2 - 250, sy/2 - 200, 500, 400, config:getText("Login panel"), false, 0xFFFFFFFF, 25, nil, 0xC8141414, nil, 0x96141414, 5, true)
 
   local login = DGS:dgsCreateEdit( 20, 50, 120, 30, "", false, loginWindow )

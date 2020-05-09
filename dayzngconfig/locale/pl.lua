@@ -3,6 +3,7 @@ local pl = {}
 -- gui
 pl["player"] = "gracz"
 pl["inventory"] = "ekwipunek"
+pl["Inventory"] = "Ekwipunek"
 pl["Login panel"] = "Panel logowania"
 pl["Login"] = "Zaloguj"
 pl["Register"] = "Zarejestruj"
